@@ -7,3 +7,8 @@ A small website for me.
 ### To-do
 
 - [ ] Photos, slider, etc.
+- [ ] Favicon
+- [ ] Analytics
+- [ ] Some sort of 'hire me' link?
+- [ ] SEO
+- [ ] Other Jekyll gems
