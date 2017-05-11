@@ -1,0 +1,48 @@
+title: Jacob Baker-Kretzmar
+email: jacob@bakerkretzmar.ca
+description: A website for Jacob Baker-Kretzmar.
+url: "https://bakerkretzmar.ca"
+twitter_username: jacobbakr
+github_username:  bakerkretzmar
+
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#     values:
+#       image: icon.png
+
+# google_site_verification:
+
+markdown: kramdown
+kramdown:
+  auto_ids: false
+excerpt_separator: <!--more-->
+gems:
+  - jekyll-assets
+  # - jekyll-seo-tag
+  # - jekyll-sitemap
+  # - jekyll-extlinks
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - Rakefile
+  - README.md
+  - s3_website.yml
+permalink: pretty
+assets:
+  sources:
+    - _assets/css
+    - _assets/fonts
+    - _assets/img
+    - _assets/js
+  autoprefixer:
+    browsers:
+      - "last 3 versions"
+      - "> 0.1%"
+  cache: false
+  features:
+    liquid: true
+# extlinks:
+  # attributes: {target: _blank}
