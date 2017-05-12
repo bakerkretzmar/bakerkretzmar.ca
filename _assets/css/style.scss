@@ -1,54 +1,76 @@
-@import 'reset';
+@import "reset";
+
+@import "breakpoint";
+
+// Breakpoints
+$medium: 481px 768px;
+$large: 769px;
 
 @font-face {
-	font-family: 'DIN Pro';
-	src: url('{% asset_path DINPro-Bold.woff2 %}') format('woff2'),
-		url('{% asset_path DINPro-Bold.woff %}') format('woff'),
-		url('{% asset_path DINPro-Bold.ttf %}') format('truetype');
-	font-weight: 700;
-	font-style: normal;
+  font-family: "DIN Pro";
+  src: url("{% asset_path DINPro-Bold.woff2 %}") format("woff2"),
+  url("{% asset_path DINPro-Bold.woff %}") format("woff"),
+  url("{% asset_path DINPro-Bold.ttf %}") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
 
-:root{
+:root {
   --color-bg: #ffffff;
   --color-text: #000000;
   --color-link: #0000ff;
   --color-icon: #000000;
-  
-  font-family: 'DIN Pro', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: "DIN Pro", "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
-
-  padding-top: 1rem;
   background-color: var(--color-bg);
   color: var(--color-text);
-
   font-size: 16px;
+  padding-top: 0.5rem;
+  @include breakpoint($large) {
+    padding-top: 1rem;
+  };
 }
 
 body {
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   };
   animation: fadeIn 0.2s both;
   animation-delay: 0.1s;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 3rem;
+  @include breakpoint($large) {
+    font-size: 5rem;
+  };
   text-align: justify;
   word-break: break-all;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
+  @include breakpoint($large) {
+    font-size: 3rem;
+  };
   margin-bottom: 1rem;
+  word-break: break-all;
 }
 
 p {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  @include breakpoint($large) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  };
 }
 
 a {
@@ -60,21 +82,29 @@ a {
 }
 
 #body {
-  width: 38rem;
+  max-width: 38rem;
+  padding: 3rem 1.5rem 1rem;
   margin: auto;
-  padding-top: 3rem;
 }
 
 span.repo {
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  a { display: inline-block; }
+  a {
+    display: inline-block;
+  }
   svg {
     position: absolute;
-    top: 2px;
-    height: 22px;
-    path { fill: var(--color-icon); }
+    top: 3px;
+    height: 14px;
+    @include breakpoint($large) {
+      top: 2px;
+      height: 22px;
+    };
+    path {
+      fill: var(--color-icon);
+    }
   }
 }
 
@@ -88,40 +118,13 @@ svg#squiggle {
     stroke: var(--color-link);
     stroke-width: 3;
     @keyframes wiggle {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50px); }
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50px);
+      }
     };
     animation: wiggle 0.7s linear infinite;
   }
-}
-
-hr {
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
-  border: none;
-  height: 4px;
-  background-color: var(--color-link);
-}
-
-.project {
-  display: block;
-  width: 800px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  img {
-    width: 300px;
-    float: left;
-    border: 0.5px solid rgba(0, 0, 0, 0.05);
-    margin-right: 20px;
-  }
-  h3 {
-    padding-top: 2px;
-    margin-bottom: 1em;
-    span { display: none; }
-    a:hover {
-      span { display: inline; }
-    }
-  }
-  br { clear: both; }
 }
