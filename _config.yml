@@ -36,6 +36,7 @@ assets:
     - _assets/files
   assets:
     - "*.pdf"
+    - "*.png"
   autoprefixer:
     browsers: ["last 3 versions","> 0.01%"]
   features:
