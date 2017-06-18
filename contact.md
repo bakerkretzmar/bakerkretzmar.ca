@@ -10,8 +10,5 @@ layout: default
 ## Github
 ## [bakerkretzmar](https://github.com/bakerkretzmar)
 
-## Twitter
-## [jacobbakr](https://twitter.com/jacobbakr)
-
 ## LinkedIn
 ## [jacobbakerkretzmar](https://www.linkedin.com/in/jacobbakerkretzmar)
