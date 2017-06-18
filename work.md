@@ -4,21 +4,30 @@ id: work
 layout: default
 ---
 
-## Greta Hamilton
+## Margaret Hamilton
 ## [mghamilton.ca](https://mghamilton.ca)
 
-Personal website for Greta Hamilton.
+Personal portfolio website for Margaret Hamilton.
 
-Parallax scrolling in every direction! {% include github.html repo="mghamilton.ca" %}
+Responsive. Made with Jekyll and Toast grid. {% include github.html repo="mghamilton.ca" %}
 
 ---
 
 ## Madi Haslam
-## [madihaslam.ca](http://madihaslam.ca)
+## [madihaslam.ca](https://madihaslam.ca)
 
 Personal website for Madi Haslam.
 
 Responsive. Made with Jekyll. Custom backend with Contentful.
+
+---
+
+## King’s Students’ Union
+## [Demo Site](http://ksu.bakerkretzmar.ca)
+
+Students’ union at the University of King’s College.
+
+Custom responsive WordPress theme. Built on Underscores.
 
 ---
 
@@ -52,6 +61,6 @@ Type and layout using InDesign. Original cover artwork. Published by etc. Press.
 ## *CANON* Journal
 ## [Vol. 1](https://issuu.com/snarc/docs/canon)
 
-Journal of under and misrepresented voices in academia.
+Journal of under- and misrepresented voices in academia.
 
 Type and layout using InDesign. Cover design. Published by etc. Press.
