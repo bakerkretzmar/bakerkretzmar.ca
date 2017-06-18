@@ -10,7 +10,8 @@ function randomizeColorScheme() {
   };
 
   var x = Math.floor(Math.random() * 7);
-  var scheme = colorSchemes[x];
+  // var scheme = colorSchemes[x];
+  var scheme = colorSchemes[2]
 
   document.documentElement.style.setProperty('--color-bg', scheme[0]);
   document.documentElement.style.setProperty('--color-text', scheme[1]);
