@@ -46,6 +46,7 @@ body {
 
 h1 {
   font-size: 3rem;
+  font-weight: 700;
   @include breakpoint($large) {
     font-size: 5rem;
   };
@@ -56,6 +57,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  font-weight: 700;
   @include breakpoint($large) {
     font-size: 3rem;
   };
@@ -66,6 +68,7 @@ h2 {
 
 p {
   font-size: 1rem;
+  font-weight: 700;
   line-height: 1.5rem;
   margin-bottom: 0.5rem;
   @include breakpoint($large) {
@@ -77,10 +80,18 @@ p {
 }
 
 a {
-  color: var(--color-link);
-  text-decoration: underline;
+  display: inline;
+  color: transparent;
+  padding-top: .2em;
+  background-size: 100% 220%;
+  background-position: 0 15%;
+  background-image: linear-gradient(to bottom, var(--color-link) 50%, var(--color-bg) 50%),
+                    linear-gradient(to bottom, var(--color-bg) 50%, var(--color-link) 50%);
+  -webkit-background-clip: text, border-box;
+  // background-clip: text, border-box;
+  transition: background-position .15s ease;
   &:hover {
-    text-decoration: none;
+    background-position: 0 90%;
   }
 }
 
@@ -128,6 +139,6 @@ svg#squiggle {
         transform: translateX(-50px);
       }
     };
-    animation: wiggle 0.7s linear infinite;
+    animation: wiggle 0.8s linear infinite;
   }
 }

@@ -27,7 +27,7 @@ Responsive. Built with Jekyll. Custom backend with Contentful.
 
 Students’ union at the University of King’s College.
 
-Custom responsive WordPress theme. Built with [\_s](https://github.com/automattic/_s).
+Custom responsive WordPress theme. Built with [s](https://github.com/automattic/_s).
 
 ---
 
@@ -36,7 +36,7 @@ Custom responsive WordPress theme. Built with [\_s](https://github.com/automatti
 
 Arts magazine and newsletter.
 
-Custom WordPress theme. Built with [\_s](https://github.com/automattic/_s).
+Custom WordPress theme. Built with [s](https://github.com/automattic/_s).
 
 ---
 
