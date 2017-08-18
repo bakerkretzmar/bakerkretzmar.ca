@@ -9,7 +9,7 @@ layout: default
 
 Personal portfolio website for Margaret Hamilton.
 
-Responsive. Built with Jekyll and Toast grid. {% include github.html repo="mghamilton.ca" %}
+Responsive. Built with Jekyll and Toast grid.
 
 ---
 
@@ -23,7 +23,7 @@ Responsive. Built with Jekyll. Custom backend with Contentful.
 ---
 
 ## King’s Students’ Union
-## [Demo Site](http://ksu.bakerkretzmar.ca)
+## [Demo](http://ksu.bakerkretzmar.ca)
 
 Students’ union at the University of King’s College.
 

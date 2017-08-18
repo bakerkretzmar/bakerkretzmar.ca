@@ -1,4 +1,11 @@
-function randomizeColorScheme() {
+(function() {
+  // var links = document.querySelectorAll('a');
+  // for (var i = 0; i < links.length; i++) {
+  //   var text = links[i].innerHTML;
+  //   links[i].setAttribute('title', text);
+  //   links[i].innerHTML = '';
+  // }
+
   var colorSchemes = {
     0: ['#ffffff', '#000000', '#0000ff', '#000000'], // white black blue
     1: ['#000000', '#ffff00', '#ffffff', '#ffffff'], // black yellow white
@@ -17,5 +24,4 @@ function randomizeColorScheme() {
   document.documentElement.style.setProperty('--color-text', scheme[1]);
   document.documentElement.style.setProperty('--color-link', scheme[2]);
   document.documentElement.style.setProperty('--color-icon', scheme[3]);
-};
-randomizeColorScheme();
+})();
