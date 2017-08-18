@@ -42,6 +42,7 @@ body {
   };
   animation: fadeIn 0.2s both;
   animation-delay: 0.1s;
+  margin: 0 1rem;
 }
 
 h1 {
@@ -80,11 +81,12 @@ p {
 }
 
 a {
+  display: inline-block;
   padding-top: .2em;
   padding-left: .2em;
   padding-right: .2em;
   margin-left: -.2em;
-  margin-right: -.2em;
+  margin-right: .5rem;
   color: var(--color-link);
   transition: all .15s ease;
   &:hover,
@@ -141,6 +143,7 @@ a {
   max-width: 38rem;
   padding: 3rem 1.5rem 1rem;
   margin: auto;
+  & > p > a { margin-right: 0; }
 }
 
 span.repo {
