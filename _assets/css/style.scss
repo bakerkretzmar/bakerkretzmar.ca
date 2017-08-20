@@ -16,10 +16,10 @@ $large: 769px;
 }
 
 :root {
-  --color-bg: #ffffff;
-  --color-text: #000000;
-  --color-link: #0000ff;
-  --color-icon: #000000;
+  --color-bg: #001680;
+  --color-text: #ed3e49;
+  --color-link: #ffff00;
+  --color-accent: #ffffff;
   font-family: "DIN Pro", "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
   background-color: var(--color-bg);
@@ -45,6 +45,27 @@ body {
   margin: 0 1rem;
 }
 
+@keyframes cursor {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#revise {
+  position: relative;
+  &::after {
+    content: '';
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    top: -.5rem;
+    right: -1rem;
+    width: .875rem;
+    height: 5rem;
+    background: var(--color-accent);
+  }
+  &.a::after { animation: cursor .6s infinite alternate ease; }
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -63,6 +84,17 @@ h2 {
     font-size: 3rem;
   };
   margin-bottom: 1rem;
+  word-break: break-all;
+  transition: font-size 0.2s;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  @include breakpoint($large) {
+    font-size: 3rem;
+  };
+  margin-bottom: 2rem;
   word-break: break-all;
   transition: font-size 0.2s;
 }
@@ -86,7 +118,8 @@ a {
   padding-left: .2em;
   padding-right: .2em;
   margin-left: -.2em;
-  margin-right: .5rem;
+  margin-top: -.2em;
+  margin-right: .625rem;
   color: var(--color-link);
   transition: all .15s ease;
   &:hover,
@@ -141,7 +174,7 @@ a {
 
 #body {
   max-width: 38rem;
-  padding: 3rem 1.5rem 1rem;
+  padding: 2rem 1.5rem 1rem;
   margin: auto;
   & > p > a { margin-right: 0; }
 }
@@ -162,7 +195,7 @@ span.repo {
       height: 22px;
     };
     path {
-      fill: var(--color-icon);
+      fill: var(--color-accent);
     }
   }
 }
