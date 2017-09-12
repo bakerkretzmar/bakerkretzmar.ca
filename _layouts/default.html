@@ -7,21 +7,19 @@
   <style>
     {% asset_source style.css %}
   </style>
-  <script async>
-    {% asset_source vendor.js %}
-  </script>
-  <link rel="shortcut icon" type="image/png" href="{{ site.url }}{% asset_path icon.png %}">
-  <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}{% asset_path icon.png %}">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" type="image/png" href="{% asset_path icon-128x128.png %}">
+  <link rel="apple-touch-icon" type="image/png" href="{% asset_path icon-128x128.png %}">
 </head>
 <body>
-  <h1>Jacob Baker-Kretzmar is a de<span id="revise">signer</span> in Toronto, Canada.</h1>
+  <h1>Jacob Baker-Kretzmar is a de<span{% if page.id == 'index' %} id="revise"{% endif %}>signer</span> in Toronto, Canada.</h1>
   <h1>{% if page.id != 'index' %}<a href="{{ site.url }}">Home</a>{% endif %}{% if page.id != 'work' %}<a href="{{ site.url }}{% link work.md %}">Work</a>{% endif %}{% if page.id != 'contact' %}<a href="{{ site.url }}{% link contact.md %}">Contact</a>{% endif %}</h1>
   <section id="body">
     {{ content | replace: "<hr />", "<svg id='squiggle' xmlns='http://www.w3.org/2000/svg' width='200' height='16' viewBox='0 0 200 16'><path d='M0,11.8c12.5,0,12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5s12.5,7.5,25,7.5 s12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5 s12.5,7.5,25,7.5'/></svg>" }}
   </section>
-  {% if page.id == 'index' %}<script>
+  <script>
     {% asset_source main.js %}
-  </script>{% endif %}
+  </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
