@@ -43,7 +43,7 @@
   // Service worker
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('{% asset_path sw.js %}').then(function(registration) {
+      navigator.serviceWorker.register('/{% asset_path sw.js %}').then(function(registration) {
         console.log('Service worker registration successful with scope: ', registration.scope);
       }, function(err) {
         console.log('ServiceWorker registration failed: ', err);
