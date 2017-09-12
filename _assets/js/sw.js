@@ -16,7 +16,7 @@ var offlineFundamentals = [
   '/',
   '/contact/',
   '/work/',
-  '/icon-128x128.png'
+  '/{% asset_path icon-128x128.png %}'
 ];
 
 /* The install event fires when the service worker is first installed.
