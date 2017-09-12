@@ -1,9 +1,17 @@
 title: Jacob Baker-Kretzmar
 email: jacob@bakerkretzmar.ca
 description: A website for Jacob Baker-Kretzmar.
-url: "https://bakerkretzmar.ca"
+url: "https://bakerkretzmar.ca/"
 twitter_username: jacobbakr
 github_username:  bakerkretzmar
+
+manifest:
+  name: Jacob Baker-Kretzmar
+  short_name: bakerkretzmar.ca
+  lang: en-CA
+  background_color: "#001680"
+  display: browser
+  description: Website of Jacob Baker-Kretzmar, web designer and developer.
 
 # defaults:
 #   -
@@ -17,7 +25,6 @@ github_username:  bakerkretzmar
 markdown: kramdown
 kramdown:
   auto_ids: false
-excerpt_separator: <!--more-->
 gems:
   - jekyll-assets
   # - jekyll-seo-tag
@@ -33,13 +40,13 @@ exclude:
 permalink: pretty
 assets:
   sources:
-    - _assets/files
+    - "_assets/fonts"
   assets:
-    - "*.pdf"
-    - "*.png"
+    - "sw.js"
   autoprefixer:
     browsers: ["last 3 versions","> 0.01%"]
   features:
     liquid: true
+  prefix: ""
 # extlinks:
   # attributes: {target: _blank}
