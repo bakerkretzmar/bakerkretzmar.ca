@@ -8,9 +8,9 @@ $large: 769px;
 
 @font-face {
   font-family: "DIN Pro";
-  src: url("{{ site.url }}{% asset_path DINPro-Bold.woff2 %}") format("woff2"),
-  url("{{ site.url }}{% asset_path DINPro-Bold.woff %}") format("woff"),
-  url("{{ site.url }}{% asset_path DINPro-Bold.ttf %}") format("truetype");
+  src: url("{% asset_path DINPro-Bold.woff2 %}") format("woff2"),
+  url("{% asset_path DINPro-Bold.woff %}") format("woff"),
+  url("{% asset_path DINPro-Bold.ttf %}") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
