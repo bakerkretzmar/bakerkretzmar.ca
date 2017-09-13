@@ -39,14 +39,13 @@ exclude:
   - s3_website.yml
 permalink: pretty
 assets:
-  sources:
-    - "_assets/fonts"
   assets:
     - "sw.js"
   autoprefixer:
     browsers: ["last 3 versions","> 0.01%"]
   features:
     liquid: true
+  digest: false
   prefix: ""
 # extlinks:
   # attributes: {target: _blank}

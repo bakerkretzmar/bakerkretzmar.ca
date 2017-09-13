@@ -1,4 +1,14 @@
 (function() {
+  // Service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/{% asset_path sw.js %}')
+      .then(function(reg) {
+        console.log('Service worker registered with scope: ', reg.scope);
+      }, function(err) {
+        console.log('Service worker registration failed: ', err);
+      });
+  }
+  
   // Designer/Developer animation
   if (document.getElementById('revise')) {
     var delayInitial = 38000;
@@ -38,17 +48,6 @@
     revise('signe', 170);
     revise('signer', 180);
     setTimeout(function() { document.getElementById('revise').classList.remove('a'); }, delayCumulative + 3600);
-  }
-
-  // Service worker
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/{% asset_path sw.js %}').then(function(registration) {
-        console.log('Service worker registration successful with scope: ', registration.scope);
-      }, function(err) {
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    });
   }
 
   // var colorSchemes = {
