@@ -25,7 +25,7 @@ var cachableResources = [
 
 
 self.addEventListener('install', function(event) {
-  console.log('Installing working and caching resources...');
+  console.log('Installing worker and caching resources...');
   event.waitUntil(
     caches.open(CURRENT_CACHES['prefetch'])
       .then(function(cache) {
@@ -52,7 +52,7 @@ self.addEventListener('fetch', function(event) {
 
       console.log('  No response for %s found in cache. About to fetch from network...', event.request.url);
 
-      return fetch(event.request).then(function(response) {
+      return fetch(event.request, { mode: 'no-cors' }).then(function(response) {
         console.log('  Response for %s from network is: %O', event.request.url, response);
         caches.open(CURRENT_CACHES['read-through']).then(function(cache) {
           if (response.status < 400 && response.type == 'basic') {
