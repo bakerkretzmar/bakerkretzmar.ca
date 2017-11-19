@@ -23,6 +23,9 @@ var cachableResources = [
   '/ms-touch-icon.png'
 ];
 
+var ignoreRequests = new RegExp('(' + [
+  'google-analytics.com(.*)'] + ')$')
+
 
 self.addEventListener('install', function(event) {
   console.log('Installing worker and caching resources...');
@@ -42,6 +45,11 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('fetch', function(event) {
   console.log('Handling fetch event for ', event.request.url);
+
+  if (ignoreRequests.test(event.request.url)) {
+    console.log('Ignored: ', event.request.url)
+    return
+  }
 
   event.respondWith(
     caches.match(event.request).then(function(response) {
