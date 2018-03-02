@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE_VERSION = 5;
+var CACHE_VERSION = 6;
 var CURRENT_CACHES = {
   'prefetch': 'prefetch-cache-v' + CACHE_VERSION,
   'read-through': 'read-through-cache-v' + CACHE_VERSION
@@ -38,7 +38,7 @@ self.addEventListener('install', function(event) {
         console.log('  Install completed and resources cached!');
       })
       .catch(function(err) {
-        console.error('  Install and caching failed: ', error);
+        console.error('  Install and caching failed: ', err);
       })
   );
 });
@@ -47,20 +47,20 @@ self.addEventListener('fetch', function(event) {
   console.log('Handling fetch event for ', event.request.url);
 
   if (ignoreRequests.test(event.request.url)) {
-    console.log('Ignored: ', event.request.url)
-    return
+    console.log('  Ignored: ', event.request.url);
+    return;
   }
 
   event.respondWith(
     caches.match(event.request).then(function(response) {
       if (response) {
-        console.log('  Found response in cache:', response);
+        console.log('  Found response in cache: ', response);
         return response;
       }
 
       console.log('  No response for %s found in cache. About to fetch from network...', event.request.url);
 
-      return fetch(event.request, { mode: 'no-cors' }).then(function(response) {
+      return fetch(event.request).then(function(response) {
         console.log('  Response for %s from network is: %O', event.request.url, response);
         caches.open(CURRENT_CACHES['read-through']).then(function(cache) {
           if (response.status < 400 && response.type == 'basic') {
