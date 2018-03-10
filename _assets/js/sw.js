@@ -1,12 +1,8 @@
-'use strict';
+const VER = '{{ site.time | date: "%Y%m%d%H%M%S" }}';
+const PRE = 'pre_' + VER;
+const READ = 'read_' + VER;
 
-var CACHE_VERSION = 6;
-var CURRENT_CACHES = {
-  'prefetch': 'prefetch-cache-v' + CACHE_VERSION,
-  'read-through': 'read-through-cache-v' + CACHE_VERSION
-};
-
-var cachableResources = [
+const PRE_URLS = [
   '/',
   '/index.html',
   '/contact/',
@@ -23,74 +19,60 @@ var cachableResources = [
   '/ms-touch-icon.png'
 ];
 
-var ignoreRequests = new RegExp('(' + [
-  'google-analytics.com(.*)'] + ')$')
-
-
 self.addEventListener('install', function(event) {
-  console.log('Installing worker and caching resources...');
+  console.log('SW-'+VER+' --> Installing worker and caching resources...');
   event.waitUntil(
-    caches.open(CURRENT_CACHES['prefetch'])
-      .then(function(cache) {
-        return cache.addAll(cachableResources);
-      })
+    caches.open(PRE)
+      .then(function(cache) { cache.addAll(PRE_URLS); })
       .then(function() {
-        console.log('  Install completed and resources cached!');
+        console.log('SW-'+VER+' --> Install completed and resources cached!');
+        self.skipWaiting();
       })
-      .catch(function(err) {
-        console.error('  Install and caching failed: ', err);
-      })
+      .catch(function(error) { console.error('SW-'+VER+' --> Install and caching failed: ', err); })
   );
 });
 
 self.addEventListener('fetch', function(event) {
-  console.log('Handling fetch event for ', event.request.url);
+  if (event.request.url.startsWith(self.location.origin)) {
+    console.log('SW-'+VER+' --> Handling fetch event for ', event.request.url);
 
-  if (ignoreRequests.test(event.request.url)) {
-    console.log('  Ignored: ', event.request.url);
-    return;
-  }
+    event.respondWith(
+      caches.match(event.request).then(function(cachedResponse) {
+        if (cachedResponse) {
+          console.log('SW-'+VER+' --> Found response in cache:', cachedResponse);
+          return cachedResponse;
+        }
 
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        console.log('  Found response in cache: ', response);
-        return response;
-      }
+        console.log('SW-'+VER+' --> No response for %s found in cache. About to fetch from network...', event.request.url);
 
-      console.log('  No response for %s found in cache. About to fetch from network...', event.request.url);
-
-      return fetch(event.request).then(function(response) {
-        console.log('  Response for %s from network is: %O', event.request.url, response);
-        caches.open(CURRENT_CACHES['read-through']).then(function(cache) {
-          if (response.status < 400 && response.type == 'basic') {
-            cache.put(event.request, response.clone());
-          }
-          return response;
+        return caches.open(READ).then(function(cache) {
+          return fetch(event.request).then(function(response) {
+            console.log('SW-'+VER+' --> Response for %s from network is: %O. Caching response for next time.', event.request.url, response);
+            return cache.put(event.request, response.clone()).then(function() {
+              return response;
+            });
+          }).catch(function(error) {
+            console.error('SW-'+VER+' --> Read-through fetch and caching failed: ', error);
+            throw error;
+          });
         });
-      }).catch(function(error) {
-        console.error('  Read-through fetch and caching failed:', error);
-        throw error;
-      });
-    })
-  );
+      })
+    );
+  } else {
+    console.log('SW-'+VER+' --> Ignored cross-origin request: ', event.request.url);
+  }
 });
 
 self.addEventListener('activate', function(event) {
-  var expectedCacheNames = Object.keys(CURRENT_CACHES).map(function(key) {
-    return CURRENT_CACHES[key];
-  });
-
+  const currentCaches = [PRE, READ];
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (expectedCacheNames.indexOf(cacheName) === -1) {
-            console.log('Deleting out of date cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+      return cacheNames.filter(function(cacheName) { return !currentCaches.includes(cacheName); });
+    }).then(function(cachesToDelete) {
+      return Promise.all(cachesToDelete.map(function(cacheToDelete) {
+        console.log('SW-'+VER+' --> Deleting stale cache: ' + cacheToDelete);
+        return caches.delete(cacheToDelete);
+      }));
+    }).then(function() { self.clients.claim(); })
   );
 });

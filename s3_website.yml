@@ -3,16 +3,12 @@ s3_secret: <%= ENV['S3_SECRET_KEY'] %>
 s3_bucket: bakerkretzmar.ca
 
 index_document: index.html
-# error_document: error.html
 
-max_age:
-  "assets/*": 2629000
-  "*": 3600
+cache_control:
+  "*": public, max-age=<%= 60 * 60 * 24 %>
+  "sw.js": no-cache, no-store
 
-gzip:
-  - .html
-  - .css
-  - .js
+gzip: true
 
 s3_endpoint: ca-central-1
 

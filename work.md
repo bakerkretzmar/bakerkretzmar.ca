@@ -11,6 +11,8 @@ Website for Tucker House Renewal Centre.
 
 Custom responsive WordPress theme. Built with [Sage](https://roots.io/sage).
 
+---
+
 ## Margaret Hamilton
 ## [mghamilton.ca](https://mghamilton.ca)
 
