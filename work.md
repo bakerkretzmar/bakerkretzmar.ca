@@ -4,12 +4,21 @@ id: work
 layout: default
 ---
 
+## Open Space Arts Society
+## [Forestrial Brain](https://d4vzhh6ib5ubq.cloudfront.net)
+
+Website documenting Jim Holyoak and Matt Shane’s 2017 _Forestrial Brain_ installation.
+
+Custom responsive website and hosting.
+
+---
+
 ## Tucker House Renewal Centre
 ## [maisontuckerhouse.ca](https://maisontuckerhouse.ca)
 
 Website for Tucker House Renewal Centre.
 
-Custom responsive WordPress theme. Built with [Sage](https://roots.io/sage).
+Custom responsive WordPress theme and hosting.
 
 ---
 
@@ -18,7 +27,7 @@ Custom responsive WordPress theme. Built with [Sage](https://roots.io/sage).
 
 Personal portfolio website for Margaret Hamilton.
 
-Responsive. Built with Jekyll and Toast grid.
+Custom responsive static website.
 
 ---
 
@@ -27,7 +36,7 @@ Responsive. Built with Jekyll and Toast grid.
 
 Personal website for Madi Haslam.
 
-Responsive. Built with Jekyll. Custom backend with Contentful.
+Custom responsive static website and CMS from Contentful.
 
 ---
 
