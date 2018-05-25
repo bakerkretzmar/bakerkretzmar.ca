@@ -82,3 +82,13 @@ Type and layout design. Original cover artwork. Published by etc. Press.
 Journal focused on bringing marginalized voices into academic discourse.
 
 Type, layout, and cover design. Published by etc. Press.
+
+---
+
+## More Clients
+
+Stratus Vineyards
+
+Cru Wine Merchants
+
+Canadian Centre for Ethics in Public Affairs
