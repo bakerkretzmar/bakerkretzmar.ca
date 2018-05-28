@@ -85,10 +85,12 @@ Type, layout, and cover design. Published by etc. Press.
 
 ---
 
-## More Clients
+## More Clients:
 
-Stratus Vineyards
+Stratus Vineyards &nbsp;[¡](https://www.stratuswines.com)
 
-Cru Wine Merchants
+Cru Wine Merchants &nbsp;[¡](https://www.cruwinemerchants.com)
 
-Canadian Centre for Ethics in Public Affairs
+Canadian Centre for Ethics in Public Affairs &nbsp;[¡](http://ccepa.ca)
+
+King’s Bookstore Co-operative &nbsp;[¡](http://kingsbookstore.ca)

@@ -220,3 +220,17 @@ svg#squiggle {
     animation: wiggle 0.8s linear infinite;
   }
 }
+
+svg#external-link-alt {
+  display: inline-block;
+  height: 1.1rem;
+  padding-left: .3125rem;
+  padding-right: .125rem;
+  path {
+    fill: var(--color-link);
+  }
+  a:hover & path, a:active & path, a:focus & path {
+    fill: var(--color-bg);
+    background-color: var(--color-link);
+  }
+}
