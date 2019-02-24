@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+  <style>
+    {% asset_source style.css %}
+  </style>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" type="image/png" href="/{% asset_path icon-128x128.png %}">
+  <link rel="apple-touch-icon" type="image/png" href="/{% asset_path icon-128x128.png %}">
+</head>
+<body>
+  <h1>Jacob Baker-Kretzmar is a de<span{% if page.id == 'index' %} id="revise"{% endif %}>signer</span> in Toronto, Canada.</h1>
+  <h1>{% if page.id != 'index' %}<a href="{{ site.url }}">Home</a>{% endif %}{% if page.id != 'work' %}<a href="{{ site.url }}{% link work.md %}">Work</a>{% endif %}{% if page.id != 'contact' %}<a href="{{ site.url }}{% link contact.md %}">Contact</a>{% endif %}</h1>
+  <section id="body">
+    {{ content | replace: "<hr />", "<svg id='squiggle' xmlns='http://www.w3.org/2000/svg' width='200' height='16' viewBox='0 0 200 16'><path d='M0,11.8c12.5,0,12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5s12.5,7.5,25,7.5 s12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5s12.5,7.5,25,7.5s12.5-7.5,25-7.5 s12.5,7.5,25,7.5'/></svg>" | replace: "¡", "<svg id='external-link-alt' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'><path d='M576 24v127.984c0 21.461-25.96 31.98-40.971 16.971l-35.707-35.709-243.523 243.523c-9.373 9.373-24.568 9.373-33.941 0l-22.627-22.627c-9.373-9.373-9.373-24.569 0-33.941L442.756 76.676l-35.703-35.705C391.982 25.9 402.656 0 424.024 0H552c13.255 0 24 10.745 24 24zM407.029 270.794l-16 16A23.999 23.999 0 0 0 384 303.765V448H64V128h264a24.003 24.003 0 0 0 16.97-7.029l16-16C376.089 89.851 365.381 64 344 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V287.764c0-21.382-25.852-32.09-40.971-16.97z'/></svg>" }}
+  </section>
+  <script>
+    {% asset_source main.js %}
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-100960136-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

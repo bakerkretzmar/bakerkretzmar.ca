@@ -1,0 +1,236 @@
+@import "reset";
+
+@import "breakpoint";
+
+// Breakpoints
+$medium: 481px 768px;
+$large: 769px;
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("/{% asset_path DINPro-Bold.woff2 %}") format("woff2"),
+  url("/{% asset_path DINPro-Bold.woff %}") format("woff"),
+  url("/{% asset_path DINPro-Bold.ttf %}") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --color-bg: #01299a;
+  --color-text: #f10a19;
+  --color-link: #fff700;
+  --color-accent: #ffffff;
+  font-family: "DIN Pro", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 16px;
+  padding-top: 0.5rem;
+  @include breakpoint($large) {
+    padding-top: 1rem;
+  };
+}
+
+body {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  };
+  animation: fadeIn 0.2s both;
+  animation-delay: 0.1s;
+  margin: 0 1rem;
+}
+
+@keyframes cursor {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#revise {
+  position: relative;
+  &::after {
+    content: '';
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    top: -.5rem;
+    right: -1rem;
+    width: .875rem;
+    height: 5rem;
+    background: var(--color-accent);
+  }
+  &.a::after { animation: cursor .6s infinite alternate ease; }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  @include breakpoint($large) {
+    font-size: 5rem;
+  };
+  text-align: justify;
+  word-break: break-all;
+  transition: font-size 0.2s;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  @include breakpoint($large) {
+    font-size: 3rem;
+  };
+  margin-bottom: 1rem;
+  word-break: break-all;
+  transition: font-size 0.2s;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  @include breakpoint($large) {
+    font-size: 3rem;
+  };
+  margin-bottom: 2rem;
+  word-break: break-all;
+  transition: font-size 0.2s;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  @include breakpoint($large) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  };
+  transition: all 0.2s;
+}
+
+a {
+  display: inline-block;
+  padding-top: .2em;
+  padding-left: .2em;
+  padding-right: .2em;
+  margin-left: -.2em;
+  margin-top: -.2em;
+  margin-right: .625rem;
+  color: var(--color-link);
+  transition: all .15s ease;
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-bg);
+    background-color: var(--color-link);
+  }
+}
+
+// a {
+//   display: inline;
+//   color: transparent;
+//   padding-top: .2em;
+//   background-size: 100% 220%;
+//   background-position: 0 15%;
+//   background-image: linear-gradient(to bottom, var(--color-link) 50%, var(--color-bg) 50%),
+//                     linear-gradient(to bottom, var(--color-bg) 50%, var(--color-link) 50%);
+//   -webkit-background-clip: text, border-box;
+//   // background-clip: text, border-box;
+//   transition: background-position .15s ease;
+//   &:hover {
+//     background-position: 0 90%;
+//   }
+// }
+
+// a {
+//   position: relative;
+//   // padding-top: .2em;
+//   &::before {
+//     content: attr(title);
+//     color: var(--color-bg);
+//     background-color: var(--color-link);
+//   }
+//   &::after {
+//     content: attr(title);
+//     position: absolute;
+//     right: 0;
+//     top: -0.2rem;
+//     left: 0;
+//     height: 90%;
+//     color: var(--color-link);
+//     transition: height 1s ease;
+//     background-color: var(--color-bg);
+//     white-space: nowrap;
+//     overflow: hidden;
+//   }
+//   &:hover::after {
+//     height: 0;
+//   }
+// }
+
+#body {
+  max-width: 38rem;
+  padding: 2rem 1.5rem 1rem;
+  margin: auto;
+  & > p > a { margin-right: 0; }
+}
+
+span.repo {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  a {
+    display: inline-block;
+  }
+  svg {
+    position: absolute;
+    top: 3px;
+    height: 14px;
+    @include breakpoint($large) {
+      top: 2px;
+      height: 22px;
+    };
+    path {
+      fill: var(--color-accent);
+    }
+  }
+}
+
+svg#squiggle {
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  path {
+    fill: none;
+    stroke: var(--color-link);
+    stroke-width: 3;
+    @keyframes wiggle {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50px);
+      }
+    };
+    animation: wiggle 0.8s linear infinite;
+  }
+}
+
+svg#external-link-alt {
+  display: inline-block;
+  height: 1.1rem;
+  padding-left: .3125rem;
+  padding-right: .125rem;
+  path {
+    fill: var(--color-link);
+  }
+  a:hover & path, a:active & path, a:focus & path {
+    fill: var(--color-bg);
+    background-color: var(--color-link);
+  }
+}
