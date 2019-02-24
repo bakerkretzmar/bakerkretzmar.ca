@@ -27,6 +27,7 @@ mix.js('source/_assets/js/main.js', 'js')
 if (mix.inProduction()) {
     mix.purgeCss({
         folders: ['source'],
+        extensions: ['html', 'js', 'php', 'scss']
     })
     .version()
 }
