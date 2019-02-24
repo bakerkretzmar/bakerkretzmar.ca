@@ -28,7 +28,7 @@ if (mix.inProduction()) {
     mix.purgeCss({
         folders: ['source'],
         extensions: ['html', 'js', 'php', 'scss'],
-        whitelistPatterns: [/h2/, /h3/, /a/, /span/]
+        whitelistPatterns: [/h2/, /h3/, /p/, /a/, /span/]
     })
     .version()
 }
