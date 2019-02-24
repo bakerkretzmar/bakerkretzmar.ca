@@ -25,5 +25,8 @@ mix.js('source/_assets/js/main.js', 'js')
     })
 
 if (mix.inProduction()) {
-    mix.purgeCss().version()
+    mix.purgeCss({
+        folders: ['source'],
+    })
+    .version()
 }
