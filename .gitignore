@@ -3,6 +3,6 @@
 /build_staging/
 /cache/
 /node_modules/
-# /source/assets/build/
+/source/assets/build/
 /vendor/
 npm-debug.log
