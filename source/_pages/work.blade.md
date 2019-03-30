@@ -12,7 +12,7 @@ title: Work
 
 @include ('_partials.project', ['project' => $work['madi-haslam']])
 
-@include ('_partials.project', ['project' => $work['kings-students-union']])
+<!-- @include ('_partials.project', ['project' => $work['kings-students-union']]) -->
 
 @include ('_partials.project', ['project' => $work['arts-abstract']])
 
@@ -22,13 +22,6 @@ title: Work
 
 @include ('_partials.project', ['project' => $work['canon-journal']])
 
-
-
-{{-- @foreach ($work as $project)
-
-@include ('_partials.project', ['project' => $project])
-
-@endforeach --}}
 
 <!-- ## Other Clients:
 
