@@ -1,7 +1,7 @@
 ---
 ---
 
-## [<span>Forestrial Brain</span>](https://forestrialbrain.surge.sh/)
+## [<span>Forestrial Brain</span>](https://forestrialbrain.ca/)
 
 ### For Open Space Arts Society
 
