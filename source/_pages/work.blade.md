@@ -2,6 +2,10 @@
 title: Work
 ---
 
+@include ('_partials.project', ['project' => $work['nova-settings-tool']])
+
+@include ('_partials.project', ['project' => $work['bee-limo']])
+
 @include ('_partials.project', ['project' => $work['save-my-spot']])
 
 @include ('_partials.project', ['project' => $work['forestrial-brain']])
