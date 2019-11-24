@@ -1,5 +1,5 @@
 ---
-repo: 'https://github.com/bakerkretzmar/forestrialbrain.ca'
+repo: 'https://gitlab.com/bakerkretzmar/forestrial-brain'
 ---
 
 ## [<span>Forestrial Brain</span>](https://forestrialbrain.ca/)
