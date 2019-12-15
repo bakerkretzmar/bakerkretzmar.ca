@@ -3,7 +3,7 @@ let build = require('./tasks/build.js')
 let tailwind = require('tailwindcss')
 require('laravel-mix-purgecss')
 
-mix.disableSuccessNotifications()
+mix.disableNotifications()
 
 mix.setPublicPath('source/assets/build')
 
