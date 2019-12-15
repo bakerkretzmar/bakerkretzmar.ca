@@ -4,3 +4,19 @@
 
 [build.environment]
     PHP_VERSION = "7.2"
+
+[[redirects]]
+    from = "/t"
+    to = "https://twitter.com/bakerkretzmar"
+
+[[redirects]]
+    from = "/twitter"
+    to = "https://twitter.com/bakerkretzmar"
+
+[[redirects]]
+    from = "/g"
+    to = "https://github.com/bakerkretzmar"
+
+[[redirects]]
+    from = "/github"
+    to = "https://github.com/bakerkretzmar"

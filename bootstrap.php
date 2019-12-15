@@ -20,3 +20,7 @@ use TightenCo\Jigsaw\Jigsaw;
  *     // Your code here
  * });
  */
+
+// $events->afterBuild(function ($jigsaw) {
+//     $jigsaw->writeOutputFile('_redirects', $jigsaw->readSourceFile('_redirects'));
+// });
