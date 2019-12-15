@@ -2,6 +2,8 @@
 title: Work
 ---
 
+@include ('_partials.project', ['project' => $work['culturedays']])
+
 @include ('_partials.project', ['project' => $work['nova-settings-tool']])
 
 @include ('_partials.project', ['project' => $work['bee-limo']])
