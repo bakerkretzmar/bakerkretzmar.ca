@@ -21,6 +21,6 @@
 
         <script type="text/javascript" src="{{ mix('js/main.js', 'assets/build') }}"></script>
 
-        <script defer src="https://cdn.usefathom.com/script.js" site="MMBBGNOE"></script>
+        <script defer src="https://cdn.usefathom.com/script.js" site="MMBBGNOE" included-domains="bakerkretzmar.ca"></script>
     </body>
 </html>
