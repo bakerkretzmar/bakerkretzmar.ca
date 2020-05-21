@@ -21,9 +21,6 @@
 
         <script type="text/javascript" src="{{ mix('js/main.js', 'assets/build') }}"></script>
 
-        @if ($page->production)
-            @include ('_partials.analytics')
-        @endif
-
+        <script defer src="https://cdn.usefathom.com/script.js" site="MMBBGNOE"></script>
     </body>
 </html>
