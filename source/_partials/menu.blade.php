@@ -12,7 +12,7 @@
 
         @continue($page->title == $sitePage->title)
 
-        <a href="{{ $sitePage->getPath() }}">
+        <a href="{{ $sitePage->getPath() }}/">
             <span>{{ $sitePage->title }}</span>
         </a>
 
