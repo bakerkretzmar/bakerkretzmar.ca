@@ -1,5 +1,5 @@
 ---
-repo: 'https://gitlab.com/bakerkretzmar/mghamilton'
+repo: https://github.com/bakerkretzmar/mghamilton.ca
 ---
 
 ## [<span>mghamilton.ca</span>](https://mghamilton.ca)

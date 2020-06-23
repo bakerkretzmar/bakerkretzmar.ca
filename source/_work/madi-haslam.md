@@ -1,5 +1,5 @@
 ---
-repo: 'https://gitlab.com/bakerkretzmar/madihaslam'
+repo: https://github.com/bakerkretzmar/madihaslam.ca
 ---
 
 ## [<span>madihaslam.ca</span>](https://madihaslam.ca)
