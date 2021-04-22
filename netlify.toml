@@ -1,7 +1,12 @@
 [build]
-    command = "php -m && npm run production"
+    command = "npm run prod"
     publish = "build_production"
-    environment = { PHP_VERSION = "7.2" }
+    environment = { PHP_VERSION = 8.0 }
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        Permissions-Policy = "interest-cohort=()"
 
 [[redirects]]
     from = "/t"

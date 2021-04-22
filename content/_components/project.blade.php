@@ -4,4 +4,4 @@
 [Code]({{ $project->repo }})
 @endif
 
-@include('_partials.squiggle')
+<x-squiggle />

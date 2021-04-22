@@ -2,15 +2,12 @@
 
 return [
     'production' => false,
+    'build' => [
+        'source' => 'content',
+        'destination' => 'public',
+    ],
     'collections' => [
-        'pages' => [
-            'path' => '/{filename}',
-            'extends' => '_layouts.master',
-            'section' => 'body',
-        ],
+        'pages' => ['path' => '{filename}'],
         'work',
     ],
-    'body_classes' => function ($page) {
-        return 'page-'.strtolower($page->title);
-    },
 ];

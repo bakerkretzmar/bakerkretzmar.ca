@@ -1,0 +1,46 @@
+@tailwind base;
+
+@font-face {
+    font-family: 'URW DIN';
+    src: url('/assets/fonts/URW DIN Bold.woff2') format('woff2'), url('/assets/fonts/URW DIN Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@tailwind components;
+
+.markdown h2 {
+    @apply text-4xl md:text-5xl;
+}
+.markdown h3 {
+    @apply text-3xl md:text-4xl;
+}
+
+a {
+    @apply inline-block text-dark-purple transition-colors duration-150 ease-in-out;
+    padding-top: .2em;
+    padding-left: .2em;
+    padding-right: .2em;
+    margin-top: -.2em;
+    margin-left: -.2em;
+}
+a:hover, a:active, a:focus {
+    @apply text-pink bg-dark-purple;
+}
+a > span {
+    @apply relative;
+    top: 0.05em;
+}
+
+.contact-page .markdown h3 {
+    @apply mb-8;
+}
+.work-page .markdown h2,
+.work-page .markdown h3 {
+    @apply mb-6;
+}
+.work-page .markdown * + p {
+    @apply mt-4;
+}
+
+@tailwind utilities;
