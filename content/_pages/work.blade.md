@@ -3,6 +3,7 @@ title: Work
 extends: _layouts.main
 ---
 
+<x-project :project="$work['tighten']" />
 <x-project :project="$work['culturedays']" />
 <x-project :project="$work['nova-settings-tool']" />
 <x-project :project="$work['bee-limo']" />
